@@ -1,6 +1,6 @@
 # About
 Simple demo on how to SSH into your alpine container. 
-The original motivation was configuring the remote interpeter within the container for xDebug / IntelliJ connectivity.
+The original motivation was configuring IntelliJ php remote interpeter to the container for debugging (xdebug).
 
 # Quick Start (docker)
 ## Build
