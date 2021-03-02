@@ -37,13 +37,15 @@ Connect through SSH
 # Quick Start (docker-compose)
 ## Build & Run
 ```
-# for powershell
-Set-Variable -Name 'SSH_PUBLIC_KEY_PATH' -Value './id_rsa.pub'; # <--- update path
-docker-compose build --build-arg SSH_PUBLIC_KEY="(Get-Content "$($SSH_PUBLIC_KEY_PATH)")";
-
 # for bash
 SSH_PUBLIC_KEY_PATH='./id_rsa.pub'; # <--- update path
-docker-compose build --build-arg SSH_PUBLIC_KEY=$(cat "${SSH_PUBLIC_KEY_PATH}");
+SSH_PUBLIC_KEY=$(cat "${SSH_PUBLIC_KEY_PATH}");
+docker-compose build --build-arg SSH_PUBLIC_KEY="${SSH_PUBLIC_KEY}";
+
+# for powershell
+Set-Variable -Name 'SSH_PUBLIC_KEY_PATH' -Value './id_rsa.pub'; # <--- update path
+Set-Variable -Name 'SSH_PUBLIC_KEY' -Value (Get-Content $SSH_PUBLIC_KEY_PATH);
+docker-compose build --build-arg SSH_PUBLIC_KEY=$SSH_PUBLIC_KEY;
 ```
 
 ## Connect
