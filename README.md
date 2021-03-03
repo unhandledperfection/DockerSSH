@@ -14,8 +14,6 @@ docker build -f Dockerfile -t docker-ssh --build-arg SSH_PUBLIC_KEY="${SSH_PUBLI
 Set-Variable -Name 'SSH_PUBLIC_KEY_PATH' -Value './id_rsa.pub'; # <--- update path
 Set-Variable -Name 'SSH_PUBLIC_KEY' -Value (Get-Content $SSH_PUBLIC_KEY_PATH);
 docker build -f Dockerfile -t docker-ssh --build-arg SSH_PUBLIC_KEY=$SSH_PUBLIC_KEY .;
-
-
 ```
 
 ## Run
