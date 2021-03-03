@@ -1,5 +1,5 @@
 # About
-Simple demo on how to SSH into your alpine container. 
+Simple demo on how to SSH into your alpine container.
 The original motivation was configuring IntelliJ php remote interpeter to the container for debugging (xdebug).
 
 # Quick Start (docker)
@@ -46,6 +46,11 @@ docker-compose build --build-arg SSH_PUBLIC_KEY="${SSH_PUBLIC_KEY}";
 Set-Variable -Name 'SSH_PUBLIC_KEY_PATH' -Value './id_rsa.pub'; # <--- update path
 Set-Variable -Name 'SSH_PUBLIC_KEY' -Value (Get-Content $SSH_PUBLIC_KEY_PATH);
 docker-compose build --build-arg SSH_PUBLIC_KEY=$SSH_PUBLIC_KEY;
+```
+
+## Run
+```
+docker-compose up --build-arg SSH_PUBLIC_KEY=$(cat "${SSH_PUBLIC_KEY_PATH}");
 ```
 
 ## Connect

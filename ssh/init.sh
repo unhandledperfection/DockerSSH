@@ -18,7 +18,8 @@ file_exists_validation()
 {
   FILEPATH=$1
   if [ ! -f "$FILEPATH" ]; then
-    echo "$FILEPATH does not exist."
+    pretty_print "Aborting - $FILEPATH does not exist."
+    exit 1
   fi
 }
 
